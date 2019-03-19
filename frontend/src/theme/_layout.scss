@@ -1,0 +1,35 @@
+@import "./variables.scss";
+
+html {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+img {
+  @include centre-img();
+  &[data-entered-viewport="false"] {
+    background-color: $gray-light;
+  }
+}
+
+::selection {
+  background-color: rgba($colour-accent, 0.5);
+}
+
+body {
+  overflow-x: hidden;
+  width: 100vw;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  background-color: $colour-background;
+}
+
+.page {
+  animation: fade-in 0.5s;
+}
+
+* {
+  box-sizing: border-box;
+}

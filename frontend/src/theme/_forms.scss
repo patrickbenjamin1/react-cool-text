@@ -1,0 +1,25 @@
+@import "./variables.scss";
+@import "./typography.scss";
+@import "./animations.scss";
+@import "./variables.scss";
+
+input, select {
+  -webkit-appearance: none;
+  border: $line-black;
+  font-size: 1rem;
+  padding: $spacing-small $spacing-small;
+  background-color: rgb(245, 245, 245);
+  &:focus {
+    outline: none;
+  }
+}
+
+select{
+  cursor: pointer;
+  padding-right: $spacing-medium;
+  background-image: url('../assets/ui/arrow-down.svg');
+  background-repeat: no-repeat;
+  background-position: calc(100% - 7px) 50%;
+  background-size: 20px;
+  font-weight: 600;
+}

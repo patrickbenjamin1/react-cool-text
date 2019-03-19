@@ -1,0 +1,62 @@
+@import "./variables.scss";
+
+html {
+  font-size: $base-font-size;
+  font-family: 'Poppins', sans-serif;
+}
+
+@include all-typography() {
+  margin: 0;
+  padding: 0;
+  white-space: pre-wrap;
+}
+
+p {
+  font-size: $font-size-small;
+}
+
+h1 {
+  font-size: $font-size-medium;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: $font-size-medium;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+h3 {
+  font-size: $font-size-large;
+}
+
+h4 {
+  font-size: $font-size-very-large;
+}
+
+h5 {
+  font-size: $font-size-very-very-large;
+}
+
+h6 {
+  font-size: $font-size-very-very-very-large;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  > p {
+    font-weight: 600;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+a,
+a:visited {
+  color: $black;
+  &.accent {
+    color: $colour-accent;
+  }
+}

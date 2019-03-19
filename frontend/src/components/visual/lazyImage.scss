@@ -1,0 +1,9 @@
+@import '../../theme/variables.scss';
+
+.lazy-image{
+  opacity: 0;
+  transition: opacity 0.3s;
+  &[data-entered-viewport="true"]{
+    opacity: 1;
+  }
+}

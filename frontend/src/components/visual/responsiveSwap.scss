@@ -1,0 +1,17 @@
+@import "../../theme/variables.scss";
+
+.responsive-swap {
+  .responsive-swap-desktop {
+    display: none;
+  }
+}
+@include screen-phone() {
+  .responsive-swap {
+    .responsive-swap-desktop {
+      display: block;
+    }
+    .responsive-swap-mobile {
+      display: none;
+    }
+  }
+}

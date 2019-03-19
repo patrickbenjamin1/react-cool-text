@@ -1,0 +1,15 @@
+@import "../../theme/variables.scss";
+
+.footer {
+  position: relative;
+  background-color: $gray-light;
+  padding: $spacing-large;
+  width: 100%;
+  @include space-between-content();
+  .footer-social-links{
+    @include centre-content();
+    > *{
+      margin-left: $spacing-medium;
+    }
+  }
+}
