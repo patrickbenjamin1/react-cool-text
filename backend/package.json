@@ -22,7 +22,7 @@
   },
   "main": "dist/app.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc -p .",
     "prestart": "yarn run build",
     "start": "nodemon .",
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -5,11 +5,15 @@ import { Route, BrowserRouter } from 'react-router-dom';
 import Shell from './components/ui/shell/shell';
 import Home from './views/home';
 
-export const Routes: React.FunctionComponent = props => {
+export const RoutePaths = {
+  home: () => `/`
+}
+
+export const Router: React.FunctionComponent = props => {
   return (
     <BrowserRouter>
       <Shell>
-        <Route path='/' exact component={Home} />
+        <Route path={RoutePaths.home()} exact component={Home} />
       </Shell>
     </BrowserRouter>
   )

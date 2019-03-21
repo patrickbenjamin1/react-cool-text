@@ -4,13 +4,13 @@ import { Provider } from 'react-redux';
 
 import store from './redux/core/store';
 
-import { Routes } from './routes';
+import { Router } from './router';
 
 import './theme/theme.scss'
 
 ReactDOM.render(
     <Provider store={store}>
-        <Routes />
+        <Router />
     </Provider>,
     document.getElementById('app')
 )

@@ -1,17 +1,13 @@
-import React from 'react'
+import * as React from 'react'
 
 import Header from './header';
 import Head from '../../head';
 import OverlayLayer from './overlayLayer';
 
 import './shell.scss';
-import { Link } from 'gatsby';
 
 interface IProps {
-  children
-
-  setAtTop: (value: boolean) => any
-  atTop: boolean
+  children: any
 }
 
 const Shell: React.FunctionComponent<IProps> = props => {
@@ -21,10 +17,10 @@ const Shell: React.FunctionComponent<IProps> = props => {
 
   const onscroll = () => {
     const scroll = window.scrollY;
-    if (scroll <= 50){
+    if (scroll <= 50) {
       setIsAtTop(true);
     }
-    else{
+    else {
       setIsAtTop(false);
     }
   }
@@ -37,7 +33,6 @@ const Shell: React.FunctionComponent<IProps> = props => {
   }, [])
 
   return <>
-    {console.log(isAtTop)}
     <Head />
     <Header />
     <main>

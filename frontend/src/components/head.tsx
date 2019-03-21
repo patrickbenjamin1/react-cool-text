@@ -3,7 +3,7 @@ import Helmet from 'react-helmet';
 
 import { projectConstants } from '../projectConstants';
 
-const meta = {
+const meta: any = {
     "description": projectConstants.description,
     "og:title": projectConstants.title,
     "og:description": projectConstants.description,
@@ -16,12 +16,10 @@ export const Head: React.FunctionComponent = () => {
         <Helmet
             titleTemplate={`${title} | %s`}
             defaultTitle={title}
-        >
-            <html lang="en" />
-            {Object.keys(meta).map(key =>
-                <meta name={key} content={meta[key]} key={key}/>
+            meta={!!meta && Object.keys(meta).map(key =>
+                ({ name: key, content: meta[key] })
             )}
-        </Helmet>
+        />
     )
 }
 
