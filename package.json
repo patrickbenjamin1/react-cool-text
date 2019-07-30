@@ -1,0 +1,9 @@
+{
+    "name": "react-boilerplate",
+    "version": "1.0.0",
+    "scripts": {
+        "start-frontend": "(cd frontend && yarn start)",
+        "start-backend": "(cd backend && yarn start)",
+        "postinstall": "(cd backend && yarn) && (cd frontend && yarn)"
+    }
+}

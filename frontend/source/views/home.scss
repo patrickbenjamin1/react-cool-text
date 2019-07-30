@@ -1,0 +1,23 @@
+@import "../theme/variables";
+
+$dudesize: 140px;
+
+.dudes {
+  max-width: 900px;
+  margin: 0 auto;
+
+  .dude-row {
+    display: flex;
+
+    margin: 0 auto;
+
+    .dude {
+      padding: $spacing-small;
+
+      img {
+        width: $dudesize;
+        height: $dudesize;
+      }
+    }
+  }
+}

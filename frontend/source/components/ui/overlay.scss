@@ -3,7 +3,7 @@
 .overlay-background {
   @include absolute-fill();
   position: fixed;
-  background-color: rgba(black, 0.4);
+  background-color: rgba(black, 0.1);
 
   user-select: none;
 

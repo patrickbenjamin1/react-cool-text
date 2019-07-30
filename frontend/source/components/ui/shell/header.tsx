@@ -8,11 +8,13 @@ import { BackToTop } from '../../navigation/backToTop';
 
 interface IHeaderProps {
   className?: string;
+  overlaysOpen?: boolean
 }
 
 const Header: React.FunctionComponent<IHeaderProps> = (props: IHeaderProps) => {
+  const { overlaysOpen } = props;
   return (
-    <header>
+    <header data-overlay-open={overlaysOpen}>
       <HamburgerButton />
       <Link to='/'>
         <p>LOGO</p>

@@ -20,15 +20,20 @@ const View: React.FunctionComponent<IPageProps> = (props) => {
     <>
       {!!head &&
         <Helmet>
-          {!!title &&
+          {!!title ?
             <title>{title}</title>
+            :
+            undefined
           }
-          {!!meta && Object.keys(meta).map(key =>
-            <meta name={key} content={meta[key]} key={key} />
-          )}
+          {!!meta ?
+            Object.keys(meta).map(key =>
+              <meta name={key} content={meta[key]} key={key} />
+            )
+            :
+            undefined}
         </Helmet>
       }
-      <div className={`page${className ? ` ${className}` : ''}`} {...attr}>
+      <div className={`view${className ? ` ${className}` : ''}`} {...attr}>
         {children}
       </div>
       {showFooter &&

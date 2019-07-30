@@ -5,13 +5,17 @@ import Head from '../../head';
 import OverlayLayer from './overlayLayer';
 
 import './shell.scss';
+import { connect } from 'react-redux';
+import { IState } from '../../../redux/core/store';
+import { IOverlayState } from '../../../redux/ducks/ui/overlays';
 
 interface IProps {
   children: any
+  overlays: IOverlayState
 }
 
-const Shell: React.FunctionComponent<IProps> = props => {
-  const { children } = props;
+const ShellComponent: React.FunctionComponent<IProps> = props => {
+  const { children, overlays } = props;
 
   const [isAtTop, setIsAtTop] = React.useState<boolean>(true);
 
@@ -32,14 +36,26 @@ const Shell: React.FunctionComponent<IProps> = props => {
     }
   }, [])
 
+  const overlaysOpen = Object.keys(overlays).some(key => !!overlays[key]);
+
   return <>
     <Head />
-    <Header />
-    <main>
-      {children}
-    </main>
+    <div className="content" data-overlay-open={overlaysOpen}>
+      <Header />
+      <main>
+        {children}
+      </main>
+    </div>
     <OverlayLayer />
   </>
 }
+
+const Shell = connect(
+  (state: IState) => ({
+    overlays: state.overlays
+  })
+  ,
+  dispatch => ({})
+)(ShellComponent)
 
 export default Shell;
