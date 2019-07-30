@@ -1,1 +1,2 @@
-output/**/*
+frontend/output
+backend/output
