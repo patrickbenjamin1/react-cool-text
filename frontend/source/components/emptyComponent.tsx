@@ -1,9 +1,7 @@
-import * as React from 'react'
+import * as React from 'react';
 
-interface IProps{
+interface IProps {}
 
-}
-
-const Component:React.FunctionComponent<IProps> = props => {
-  return <></>
-}
+const Component: React.FunctionComponent<IProps> = props => {
+  return <></>;
+};
