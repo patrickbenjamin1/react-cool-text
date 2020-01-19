@@ -1,0 +1,7 @@
+@import '../theme/imports.scss';
+
+.home {
+    @include fill-screen;
+    overflow: hidden;
+    @include centre-content;
+}

@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-import Home from './home';
+import Home from './views/home';
 
 import "./theme/theme.scss";
 

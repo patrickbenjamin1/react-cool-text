@@ -1,6 +1,16 @@
 @import '../theme/imports';
 
 .cool-text-letter {
-    font-size: 4rem;
+    font-size: 7rem;
+    margin: $spacing-medium;
     font-weight: 900;
+    position: relative;
+    color: transparent;
+
+    .cool-text-letter-stack-item {
+        @include absolute-fill;
+        @include centre-content;
+        user-select: none;
+
+    }
 }
