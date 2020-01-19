@@ -1,10 +1,12 @@
 import * as React from 'react'
 
-export interface ILetterProps {
+import './letter.scss'
+
+export interface ICoolLetterProps {
     letter: string
 }
 
-export const CoolLetter: React.FunctionComponent<ILetterProps> = ({ letter }) => {
+export const CoolLetter: React.FunctionComponent<ICoolLetterProps> = ({ letter }) => {
     return (
         <div className='cool-text-letter'>
             {letter}

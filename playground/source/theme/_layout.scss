@@ -1,4 +1,4 @@
-@import "./variables.scss";
+@import "./imports.scss";
 
 html {
   width: 100vw;
@@ -8,6 +8,7 @@ html {
 
 img {
   @include centre-img();
+
   &[data-entered-viewport="false"] {
     background-color: $gray-light;
   }
