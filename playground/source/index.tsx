@@ -1,8 +1,8 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-import { Router } from "./router";
+import Home from './home';
 
 import "./theme/theme.scss";
 
-ReactDOM.render(<Router />, document.getElementById("app"));
+ReactDOM.render(<Home />, document.getElementById("app"));

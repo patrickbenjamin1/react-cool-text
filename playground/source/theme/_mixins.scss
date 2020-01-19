@@ -1,64 +1,3 @@
-//VARIABLES
-
-//spacing
-$spacing-xlarge: 60px;
-$spacing-large: 40px;
-$spacing-medium: 20px;
-$spacing-small: 10px;
-
-//colours
-$gray-very-light: #ececec;
-$gray-light: darken($gray-very-light, 10%);
-$gray-medium: darken($gray-very-light, 20%);
-$gray-dark: darken($gray-very-light, 30%);
-$gray-very-dark: darken($gray-very-light, 40%);
-
-$white: white;
-$black: black;
-
-$colour-accent: blue;
-$colour-accent-secondary: red;
-
-$colour-background: $white;
-
-//screen sizes
-$screen-size-tablet: 1024px;
-$screen-size-phone: 712px;
-$screen-size-tiny-phone: 360px;
-
-//lines
-$line-thickness: 1px;
-$line-black: black $line-thickness solid;
-$line-dark: $gray-dark $line-thickness solid;
-$line-medium: $gray-medium $line-thickness solid;
-$line-light: $gray-light $line-thickness solid;
-
-//transitions
-$transition-quick: 0.3s;
-$transition-medium: 0.5s;
-$transition-slow: 0.7s;
-
-//shadow
-$shadow: 0 2px 12px rgba(black, 0.1);
-
-//z layers
-$content-layer: 100;
-$fixed-ui-layer: 200;
-$overlay-layer: 400;
-
-//font-sizes
-$base-font-size: 14px;
-$font-size-very-small: 0.844rem;
-$font-size-small: 1rem;
-$font-size-medium: 1.2rem;
-$font-size-large: 1.44rem;
-$font-size-very-large: 1.728rem;
-$font-size-very-very-large: 2.074rem;
-$font-size-very-very-very-large: 2.488rem;
-
-//project specific
-$header-height: 54px;
-
 // MIXINS
 
 //responsiveness
@@ -67,16 +6,19 @@ $header-height: 54px;
     @content;
   }
 }
+
 @mixin screen-tablet() {
   @include media-query($screen-size-tablet) {
     @content;
   }
 }
+
 @mixin screen-phone() {
   @include media-query($screen-size-phone) {
     @content;
   }
 }
+
 @mixin screen-phone-tiny() {
   @include media-query($screen-size-tiny-phone) {
     @content;
@@ -115,17 +57,17 @@ $header-height: 54px;
 }
 
 //sizes
-@mixin square($size: 40px){
+@mixin square($size: 40px) {
   width: $size;
   height: $size;
 }
 
-@mixin fill(){
+@mixin fill() {
   width: 100%;
   height: 100%;
 }
 
-@mixin fill-screen(){
+@mixin fill-screen() {
   width: 100vw;
   height: 100vh;
 }
@@ -138,6 +80,7 @@ $header-height: 54px;
     }
   }
 }
+
 @mixin stagger-animations($child-class, $increments: 6, $stagger-time: 0.1s) {
   @for $i from 1 through $increments {
     #{$child-class}:nth-of-type(#{$i}) {
@@ -155,6 +98,7 @@ $header-height: 54px;
 
 @mixin hover-bgcolor($color, $hover-color) {
   background-color: $color;
+
   &:hover {
     background-color: $hover-color;
     @content;
@@ -167,6 +111,7 @@ $header-height: 54px;
 
 //selectors
 @mixin all-typography() {
+
   p,
   h1,
   h2,

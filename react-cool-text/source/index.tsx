@@ -1,0 +1,1 @@
+export { CoolLetter } from './components/letter';
