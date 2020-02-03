@@ -2,7 +2,7 @@
 
 html {
   font-size: $base-font-size;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Raleway', serif;
 }
 
 @include all-typography() {
@@ -45,8 +45,10 @@ h6 {
 a {
   text-decoration: none;
   cursor: pointer;
-  > p {
+
+  >p {
     font-weight: 600;
+
     &:hover {
       text-decoration: underline;
     }
@@ -56,6 +58,7 @@ a {
 a,
 a:visited {
   color: $black;
+
   &.accent {
     color: $colour-accent;
   }

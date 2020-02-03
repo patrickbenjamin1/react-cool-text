@@ -1,8 +1,8 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 
 import Home from './views/home';
 
-import "./theme/theme.scss";
+import './theme/theme.scss';
 
-ReactDOM.render(<Home />, document.getElementById("app"));
+ReactDOM.render(<Home />, document.getElementById('app'));

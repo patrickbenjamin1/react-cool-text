@@ -4,4 +4,15 @@
     @include fill-screen;
     overflow: hidden;
     @include centre-content;
+    padding: $spacing-xlarge;
+
+    .cool-text {
+        justify-content: flex-start;
+        width: 1350px;
+
+        .cool-text-letter {
+            margin: $spacing-large $spacing-large * 0.7;
+            font-size: 1.8rem;
+        }
+    }
 }

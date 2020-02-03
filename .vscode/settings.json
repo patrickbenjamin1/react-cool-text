@@ -1,6 +1,0 @@
-{
-  "prettier.requireConfig": true,
-  "prettier.configPath": ".eslintrc.js",
-  "editor.formatOnSave": true,
-  "typescript.tsdk": "web/node_modules/typescript/lib"
-}
