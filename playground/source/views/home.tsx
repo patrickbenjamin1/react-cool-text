@@ -17,7 +17,9 @@ export const Home: React.FunctionComponent = () => {
                     key={word}
                     letterStackItemCount={1}
                     letterStackItemColor="red"
-                    randomRotateRange={{ min: -20, max: 20 }}
+                    randomScaleRange={{ min: 0.2, max: 2 }}
+                    randomRotateRange={{ min: -180, max: 180 }}
+                    randomTranslateRange={{ x: { min: -10, max: 10 }, y: { min: -10, max: 10 } }}
                     letterStackItemTranslate={stackItemIndex => ({
                         y: stackItemIndex * 20,
                         x: 1,
