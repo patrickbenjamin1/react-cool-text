@@ -1,3 +1,5 @@
+![example](./example.jpg)
+
 # react-cool-text
 
 A cool text component for making your interwebzone look real stylish my dude. The package is written in typescript, compiled back to js, with typings declarations in the package.
@@ -17,6 +19,12 @@ To add to your project
 npm install --save react-cool-text
 ```
 
+or if you use yarn
+
+```
+yarn add react-cool-text
+```
+
 To use
 
 ```jsx
@@ -28,13 +36,15 @@ const MyCoolComponent: React.FunctionComponent = () => {
 };
 ```
 
-![example](./example.jpg)
+The children _must_ be typed as a single string, or the component will not render, and everything will break.
 
 ## Props
 
 TODO
 
 ## Examples
+
+![example](./example.jpg)
 
 This example was achieved with the following props
 
