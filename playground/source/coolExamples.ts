@@ -32,7 +32,7 @@ export namespace CoolExamples {
             x: stackIndex * -9,
             y: Math.sin(stackIndex * 0.5) * 10 - 9 * stackIndex,
         }),
-        letterColor: (_, index) => (index % 2 === 0 ? 'red' : 'brown'),
+        letterColor: index => (index % 2 === 0 ? 'red' : 'brown'),
         letterStackItemOpacity: stackIndex => 1 / (stackIndex + 1),
     };
 

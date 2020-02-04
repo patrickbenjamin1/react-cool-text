@@ -16,7 +16,7 @@ export const Home: React.FunctionComponent = () => {
             {words.map(word => (
                 <CoolText
                     key={word}
-                    letterStackItemCount={(_, i) => 1 + i * i * 2}
+                    letterStackItemCount={i => 1 + i * i * 2}
                     letterStackItemOpacity={i => (i === 0 ? 1 : 0.3 - i * 0.008)}
                     letterStackItemTranslate={i => ({ y: i * 4, x: 0 })}
                 >
