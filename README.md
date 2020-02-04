@@ -46,33 +46,56 @@ Meanwhile, `letterStackItemCount` takes a number, IE `10`, and `letterStackItemS
 
 ## Props
 
-| prop                     | description                                               | example                                                          |
-| ------------------------ | --------------------------------------------------------- | ---------------------------------------------------------------- |
-| letterStackItemCount     | The number of times to repeat and stack each letter       | 40                                                               |
-| _Letter Stack Callbacks_ | These callbacks work on items in each letter stack        |                                                                  |
-| letterStackItemColor     | The colour to apply to each letter in the stack           | (stackIndex, letterIndex, letter) => 'red'                       |
-| letterStackItemRotate    | The rotation to apply to each letter in the stack         | (stackIndex, letterIndex, letter) => letter === "h" ? 90 : 0     |
-| letterStackItemScale     | The scale to apply to each letter in the stack            | (stackIndex, letterIndex, letter) => 0.1 \* stackIndex           |
-| letterStackItemTranslate | The translation to apply to each letter in the stack      | (stackIndex, letterIndex, letter) => {x: 10, y: 5 \* stackIndex} |
-| letterStackItemOpacity   | The opacity to apply to each letter in the stack          | 0.3                                                              |
-| letterStackItemZIndex    | The z index to apply to each letter in the stack          | (stackIndex, letterIndex, letter) => 50 - stackIndex             |
-| letterStackItemClassName | The className to apply to each letter in the stack        | (stackIndex, letterIndex, letter) => "letter-" + letter          |
-| _Per Letter Randoms_     | These produce a random number between the min and max     |                                                                  |
-| randomRotateRange        | Minimum and maximum amount of random rotation per letter  | {min: -10, max: 10}                                              |
-| randomScaleRange         | Minimum and maximum amount of random scale per letter     | {min: -10, max: 10}                                              |
-| randomTranslateRange     | Minimum and maximum amount of random translate per letter | {x: {min: -10, max: 10}, y: {min: -10, max: 10}}                 |
-| _Letter Callbacks_       | These callbacks run on each letter                        |                                                                  |
-| letterColor              | Color to set each letter                                  | (letterIndex, letter) => 'red'                                   |
-| letterRotate             | Amount to rotate each letter by                           | (letterIndex, letter) => letterIndex \* 2                        |
-| letterScale              | Amount to scale each letter by                            | (letterIndex, letter) => 1 + letterIndex \* 0.01                 |
-| letterTranslate          | Amount to translate each letter by                        | (letterIndex, letter) => {x: 0, y: letterIndex \* 2}             |
-| letterZIndex             | Z index to apply to each letter                           | (letterIndex, letter) => letterIndex \* 2                        |
-| letterClassName          | The className to apply to each letter                     | (letterIndex, letter) => "letter-" + letter                      |
-| _Wrapper props_          | These props apply to the div wrapping everything          |                                                                  |
-| className                | ClassName to apply to the wrapper                         | "my-cool-text"                                                   |
-| id                       | id to apply to the wrapper                                | "my-cool-text"                                                   |
+### Letter Stack Callbacks
 
-_These callbacks can all also just take a value instead_
+These callbacks work on items in each letter stack
+
+| prop                     | description                                          | example                                                          |
+| ------------------------ | ---------------------------------------------------- | ---------------------------------------------------------------- |
+| letterStackItemColor     | The colour to apply to each letter in the stack      | (stackIndex, letterIndex, letter) => 'red'                       |
+| letterStackItemRotate    | The rotation to apply to each letter in the stack    | (stackIndex, letterIndex, letter) => letter === "h" ? 90 : 0     |
+| letterStackItemScale     | The scale to apply to each letter in the stack       | (stackIndex, letterIndex, letter) => 0.1 \* stackIndex           |
+| letterStackItemTranslate | The translation to apply to each letter in the stack | (stackIndex, letterIndex, letter) => {x: 10, y: 5 \* stackIndex} |
+| letterStackItemOpacity   | The opacity to apply to each letter in the stack     | 0.3                                                              |
+| letterStackItemZIndex    | The z index to apply to each letter in the stack     | (stackIndex, letterIndex, letter) => 50 - stackIndex             |
+| letterStackItemClassName | The className to apply to each letter in the stack   | (stackIndex, letterIndex, letter) => "letter-" + letter          |
+
+### Per Letter Randoms
+
+These produce a random number between the min and max
+
+| prop                 | description                                               | example                                          |
+| -------------------- | --------------------------------------------------------- | ------------------------------------------------ |
+| randomRotateRange    | Minimum and maximum amount of random rotation per letter  | {min: -10, max: 10}                              |
+| randomScaleRange     | Minimum and maximum amount of random scale per letter     | {min: -10, max: 10}                              |
+| randomTranslateRange | Minimum and maximum amount of random translate per letter | {x: {min: -10, max: 10}, y: {min: -10, max: 10}} |
+
+### Letter Callbacks
+
+These callbacks run on each letter
+
+| prop                 | description                                         | example                                              |
+| -------------------- | --------------------------------------------------- | ---------------------------------------------------- |
+| letterStackItemCount | The number of times to repeat and stack each letter | (letterIndex, letter) => 20                          |
+| letterColor          | Color to set each letter                            | (letterIndex, letter) => 'red'                       |
+| letterRotate         | Amount to rotate each letter by                     | (letterIndex, letter) => letterIndex \* 2            |
+| letterScale          | Amount to scale each letter by                      | (letterIndex, letter) => 1 + letterIndex \* 0.01     |
+| letterTranslate      | Amount to translate each letter by                  | (letterIndex, letter) => {x: 0, y: letterIndex \* 2} |
+| letterZIndex         | Z index to apply to each letter                     | (letterIndex, letter) => letterIndex \* 2            |
+| letterClassName      | The className to apply to each letter               | (letterIndex, letter) => "letter-" + letter          |
+
+### Wrapper props
+
+These props apply to the div wrapping everything
+
+| prop      | description                       | example        |
+| --------- | --------------------------------- | -------------- |
+| className | ClassName to apply to the wrapper | "my-cool-text" |
+| id        | id to apply to the wrapper        | "my-cool-text" |
+
+| _Per Letter Randoms_ | These produce a random number between the min and max | |
+
+_The callbacks in these props can all also just take a value instead_
 
 ## Examples
 
