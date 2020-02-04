@@ -1,4 +1,5 @@
 import { ICoolTextProps } from '../../react-cool-text/source';
+import { MinMax } from '../../react-cool-text/source/types';
 
 const getRandomNum = (minMax: MinMax) => Math.random() * (minMax.max - minMax.min) + minMax.min;
 
@@ -33,5 +34,12 @@ export namespace CoolExamples {
         }),
         letterColor: (_, index) => (index % 2 === 0 ? 'red' : 'brown'),
         letterStackItemOpacity: stackIndex => 1 / (stackIndex + 1),
+    };
+
+    export const coolFadedText: CoolExample = {
+        randomRotateRange: { min: -30, max: 30 },
+        letterStackItemCount: 40,
+        letterStackItemOpacity: i => (i === 0 ? 1 : 0.4 - i * 0.01),
+        letterStackItemTranslate: i => ({ x: i * 1, y: i * 1 }),
     };
 }
