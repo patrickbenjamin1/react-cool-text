@@ -1,11 +1,16 @@
 {
     "name": "react-cool-text",
-    "version": "1.0.11",
+    "version": "1.0.12",
     "description": "React component for displaying text in a cool way.",
     "homepage": "https://github.com/patrickbenjamin1/react-cool-text",
     "author": "Patrick Benjamin",
     "main": "react-cool-text/output/index.js",
     "typings": "react-cool-text/output/index.d.ts",
+    "keywords": [
+        "react",
+        "typescript",
+        "typography"
+    ],
     "directories": {
         "lib": "react-cool-text/"
     },
