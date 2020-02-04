@@ -8,5 +8,5 @@
         "jsx": "react",
         "declaration": true
     },
-    "include": ["./**/*", "../playground/index.tsx"]
+    "include": ["./**/*"]
 }

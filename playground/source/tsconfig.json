@@ -1,12 +1,12 @@
 {
-  "compilerOptions": {
-    "outDir": "../output/",
-    "sourceMap": true,
-    "noImplicitAny": true,
-    "module": "commonjs",
-    "target": "es6",
-    "jsx": "react",
-    "declaration": true
-  },
-  "include": ["./**/*", "../playground/index.tsx"]
+    "compilerOptions": {
+        "outDir": "../output/",
+        "sourceMap": true,
+        "noImplicitAny": true,
+        "module": "commonjs",
+        "target": "es6",
+        "jsx": "react",
+        "declaration": true
+    },
+    "include": ["./**/*"]
 }

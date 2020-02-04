@@ -1,5 +1,4 @@
-export { CoolLetter, ICoolLetterProps } from './components/letter';
-export { CoolText, ICoolTextProps } from './components/text';
+import './theme.css';
 
-import { CoolText } from './components/text';
-export default CoolText;
+export * from './components/letter';
+export * from './components/text';

@@ -1,9 +1,9 @@
 import * as React from 'react';
 
 import { CoolLetter } from './letter';
-
-import './text.scss';
 import { ClassHelpers } from '../helpers/class';
+
+import { Vector, MinMax } from '../types';
 
 export type LetterMethod<T> = (letter: string, index: number) => T;
 export type LetterMethodOrValue<T> = T | LetterMethod<T>;
@@ -89,11 +89,13 @@ export const CoolText: React.FunctionComponent<ICoolTextProps> = ({ children, cl
     const Text = React.useMemo<string[]>(() => children.split(''), [children]);
 
     return (
-        <div className={ClassHelpers.classNames('cool-text', className)}>
-            {Text.map((letter, i) => (
-                <CoolLetter letter={letter} index={i} key={i + letter} {...props} />
-            ))}
-        </div>
+        <>
+            <div className={ClassHelpers.classNames('cool-text', className)}>
+                {Text.map((letter, i) => (
+                    <CoolLetter letter={letter} index={i} key={i + letter} {...props} />
+                ))}
+            </div>
+        </>
     );
 };
 
@@ -103,3 +105,5 @@ CoolText.defaultProps = {
     randomScaleRange: { min: 1, max: 1 },
     randomTranslateRange: { x: { min: 0, max: 0 }, y: { min: 0, max: 0 } },
 };
+
+export default CoolText;

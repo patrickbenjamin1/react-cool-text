@@ -1,10 +1,10 @@
 {
     "name": "react-cool-text",
-    "version": "1.0.3",
+    "version": "1.0.7",
     "description": "React component for displaying text in a cool way.",
     "homepage": "https://github.com/patrickbenjamin1/react-cool-text",
     "author": "Patrick Benjamin",
-    "main": "react-cool-text/output/app.js",
+    "main": "react-cool-text/output/index.js",
     "typings": "react-cool-text/output/index.d.ts",
     "directories": {
         "lib": "react-cool-text/"
@@ -14,14 +14,14 @@
         "url": "git+https://github.com/patrickbenjamin1/react-cool-text"
     },
     "dependencies": {
+        "import-resolve": "^0.4.0",
         "react": "^16.12.0",
         "react-dom": "^16.12.0",
-        "react-helmet": "^5.2.1",
         "react-router-dom": "^5.1.2"
     },
     "scripts": {
         "start-playground": "(cd playground && webpack-dev-server --config webpack.config.js --mode development)",
-        "build": "(cd react-cool-text && webpack --config webpack.config.js --mode production)",
+        "build": "(cd react-cool-text && tsc --pretty -p source -d)",
         "prepublish": "npm run build",
         "clean": "rm -rf playground/output react-cool-text/output",
         "clean-full": "npmr clean -- node_modules"

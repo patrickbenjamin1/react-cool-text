@@ -4,8 +4,7 @@ import { ICoolTextProps } from '..';
 import { LetterMethodOrValue, LetterStackMethodOrValue, LetterMethodIsMethod, LetterStackMethodIsMethod } from './text';
 import { TransformHelpers } from '../helpers/transform';
 import { ClassHelpers } from '../helpers/class';
-
-import './letter.scss';
+import { MinMax, Vector } from '../types';
 
 const callLetterMethod = <T extends any>(method: LetterMethodOrValue<T>, letter: string, index: number) =>
     LetterMethodIsMethod(method) ? method(letter, index) : method;
@@ -211,3 +210,5 @@ const CoolLetterStackItem: React.FunctionComponent<ICoolLetterStackItemProps> = 
         </div>
     );
 };
+
+export default CoolLetter;
