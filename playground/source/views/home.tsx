@@ -4,7 +4,7 @@ import { CoolText } from '../../../react-cool-text/source/components/text';
 import { MinMax } from '../../../react-cool-text/source/types';
 
 import './home.scss';
-import '../../../react-cool-text/source/theme.css';
+import '../../../react-cool-text/source/theme.module.css';
 
 const getRandomNum = (minMax: MinMax) => Math.random() * (minMax.max - minMax.min) + minMax.min;
 
