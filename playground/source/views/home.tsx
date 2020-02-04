@@ -4,7 +4,7 @@ import { CoolText } from '../../../react-cool-text/source/components/text';
 import { MinMax } from '../../../react-cool-text/source/types';
 
 import './home.scss';
-import '../../../react-cool-text/source/theme.module.css';
+import '../../../react-cool-text/source/theme.css';
 
 const getRandomNum = (minMax: MinMax) => Math.random() * (minMax.max - minMax.min) + minMax.min;
 
@@ -16,16 +16,9 @@ export const Home: React.FunctionComponent = () => {
             {words.map(word => (
                 <CoolText
                     key={word}
-                    letterStackItemCount={1}
-                    // letterStackItemColor="red"
-                    randomScaleRange={{ min: 0.2, max: 2 }}
-                    randomRotateRange={{ min: -20, max: 20 }}
-                    randomTranslateRange={{ x: { min: -10, max: 10 }, y: { min: -10, max: 10 } }}
-                    // letterStackItemTranslate={stackItemIndex => ({
-                    //     y: stackItemIndex * 2,
-                    //     x: 1,
-                    // })}
-                    // {...CoolExamples.drunk}
+                    letterStackItemCount={(_, i) => 1 + i * i * 2}
+                    letterStackItemOpacity={i => (i === 0 ? 1 : 0.3 - i * 0.008)}
+                    letterStackItemTranslate={i => ({ y: i * 4, x: 0 })}
                 >
                     {word}
                 </CoolText>

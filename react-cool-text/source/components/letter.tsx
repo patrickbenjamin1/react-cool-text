@@ -6,24 +6,24 @@ import { TransformHelpers } from '../helpers/transform';
 import { ClassHelpers } from '../helpers/class';
 import { MinMax, Vector } from '../types';
 
-const callLetterMethod = <T extends any>(method: LetterMethodOrValue<T>, letter: string, index: number) =>
-    LetterMethodIsMethod(method) ? method(letter, index) : method;
+const callLetterMethod = <T extends any>(method: LetterMethodOrValue<T>, letterIndex: number, letter: string) =>
+    LetterMethodIsMethod(method) ? method(letterIndex, letter) : method;
 
 const createLetterStackMethod = <T extends any>(
     method: LetterStackMethodOrValue<T>,
+    letterIndex: number,
     letter: string,
-    index: number,
 ): T | ((stackIndex: number) => T) =>
-    LetterStackMethodIsMethod(method) ? (stackIndex: number) => method(stackIndex, letter, index) : method;
+    LetterStackMethodIsMethod(method) ? (stackIndex: number) => method(stackIndex, letterIndex, letter) : method;
 
 const getRandomNum = (minMax: MinMax) => Math.random() * (minMax.max - minMax.min) + minMax.min;
 
-const getRandomNumFromRange = (method: LetterMethodOrValue<MinMax>, letter: string, index: number) =>
-    getRandomNum(callLetterMethod(method, letter, index));
+const getRandomNumFromRange = (method: LetterMethodOrValue<MinMax>, index: number, letter: string) =>
+    getRandomNum(callLetterMethod(method, index, letter));
 
-const getRandomNumFromVector2Range = (method: LetterMethodOrValue<Vector<MinMax>>, letter: string, index: number): Vector => ({
-    x: getRandomNum(callLetterMethod(method, letter, index).x),
-    y: getRandomNum(callLetterMethod(method, letter, index).y),
+const getRandomNumFromVector2Range = (method: LetterMethodOrValue<Vector<MinMax>>, index: number, letter: string): Vector => ({
+    x: getRandomNum(callLetterMethod(method, index, letter).x),
+    y: getRandomNum(callLetterMethod(method, index, letter).y),
 });
 
 export interface ICoolLetterProps extends Omit<ICoolTextProps, 'children'> {
@@ -52,20 +52,20 @@ export const CoolLetter: React.FunctionComponent<ICoolLetterProps> = ({
     letterZIndex,
     letterClassName,
 }) => {
-    const letterMethod = React.useCallback(<T extends any>(method: LetterMethodOrValue<T>) => callLetterMethod(method, letter, index), [
+    const letterMethod = React.useCallback(<T extends any>(method: LetterMethodOrValue<T>) => callLetterMethod(method, index, letter), [
         letter,
         index,
     ]);
-    const randomNum = React.useCallback((method: LetterMethodOrValue<MinMax>) => getRandomNumFromRange(method, letter, index), [
+    const randomNum = React.useCallback((method: LetterMethodOrValue<MinMax>) => getRandomNumFromRange(method, index, letter), [
         letter,
         index,
     ]);
     const randomNumVector2 = React.useCallback(
-        (method: LetterMethodOrValue<Vector<MinMax>>) => getRandomNumFromVector2Range(method, letter, index),
+        (method: LetterMethodOrValue<Vector<MinMax>>) => getRandomNumFromVector2Range(method, index, letter),
         [letter, index],
     );
     const letterStackMethodFactory = React.useCallback(
-        <T extends any>(method: LetterStackMethodOrValue<T>) => createLetterStackMethod(method, letter, index),
+        <T extends any>(method: LetterStackMethodOrValue<T>) => createLetterStackMethod(method, index, letter),
         [letter, index],
     );
 

@@ -5,12 +5,12 @@ import { ClassHelpers } from '../helpers/class';
 
 import { Vector, MinMax } from '../types';
 
-export type LetterMethod<T> = (letter: string, index: number) => T;
+export type LetterMethod<T> = (letterIndex: number, letter: string) => T;
 export type LetterMethodOrValue<T> = T | LetterMethod<T>;
 export const LetterMethodIsMethod = <T extends any>(method: LetterMethodOrValue<T>): method is LetterMethod<T> =>
     typeof method === 'function';
 
-export type LetterStackMethod<T> = (index: number, letter: string, letterIndex: number) => T;
+export type LetterStackMethod<T> = (stackItemIndex: number, letterIndex: number, letter: string) => T;
 export type LetterStackMethodOrValue<T> = T | LetterStackMethod<T>;
 export const LetterStackMethodIsMethod = <T extends any>(method: LetterStackMethodOrValue<T>): method is LetterStackMethod<T> =>
     typeof method === 'function';
@@ -57,7 +57,7 @@ export interface ICoolTextProps {
 
     // PER LETTER
 
-    /* Amount to rotate each letter by */
+    /* Color to set each letter */
     letterColor?: LetterMethodOrValue<string>;
 
     /* Amount to rotate each letter by */
@@ -69,19 +69,22 @@ export interface ICoolTextProps {
     /* Amount to transform each letter by */
     letterTranslate?: LetterMethodOrValue<Vector>;
 
-    /* Z index of each letter */
+    /* The Z index to apply to each letter */
     letterZIndex?: LetterMethodOrValue<number>;
 
-    /* ClassName to apply to each letter */
+    /* The ClassName to apply to each letter */
     letterClassName?: LetterMethodOrValue<string>;
 
     // WRAPPER
 
     /* className to apply to the wrapping element */
     className?: string;
+
+    /* id to apply to the wrapping element */
+    id?: string;
 }
 
-export const CoolText: React.FunctionComponent<ICoolTextProps> = ({ children, className, ...props }) => {
+export const CoolText: React.FunctionComponent<ICoolTextProps> = ({ children, className, id, ...props }) => {
     if (typeof children !== 'string') {
         console.error('CoolText component received children props which was not a string — children must be of type string.');
     }
@@ -90,7 +93,7 @@ export const CoolText: React.FunctionComponent<ICoolTextProps> = ({ children, cl
 
     return (
         <>
-            <div className={ClassHelpers.classNames('cool-text', className)}>
+            <div className={ClassHelpers.classNames('cool-text', className)} id={id}>
                 {Text.map((letter, i) => (
                     <CoolLetter letter={letter} index={i} key={i + letter} {...props} />
                 ))}
