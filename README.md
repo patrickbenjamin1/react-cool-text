@@ -4,6 +4,9 @@
 
 A cool text component for making your interwebzone look real stylish my dude. The package is written in typescript, compiled back to js, with typings declarations in the package.
 
+[codesandbox](https://codesandbox.io/s/weathered-cookies-10o2p)
+[npm](https://www.npmjs.com/package/react-cool-text)
+
 ## Requirements
 
 -   React
