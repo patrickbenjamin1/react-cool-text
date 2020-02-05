@@ -12,8 +12,6 @@ A cool text component for making your interwebzone look real stylish my dude. Th
 -   React
 -   Some kind of css loader
 
-    Because this package uses css files for styling, anything consuming it will need a css loader of some sort, like webpack with css-loader.
-
 ## Use
 
 To add to your project
@@ -26,6 +24,18 @@ or if you use yarn
 
 ```
 yarn add react-cool-text
+```
+
+CSS must then be imported into your project, either as a side effect in Javascript
+
+```js
+import 'react-cool-text/react-cool-text/output/theme.css';
+```
+
+or directly in CSS/SCSS
+
+```css
+@import '~react-cool-text/react-cool-text/output/theme';
 ```
 
 To use
@@ -51,7 +61,11 @@ Meanwhile, `letterStackItemCount` takes a number, IE `10`, and `letterStackItemS
 
 ### Letter Stack Callbacks
 
-These callbacks work on items in each letter stack
+These callbacks run on each item in each stack of each letter.
+
+Each one can take a callback with three values, `stackIndex`, the index of the item in the stack, `letterIndex`, the index of the letter in the word, and `letter`, the string value of the letter.
+
+Alternatively, it can just take a value.
 
 | prop                     | description                                          | example                                                          |
 | ------------------------ | ---------------------------------------------------- | ---------------------------------------------------------------- |
@@ -65,7 +79,7 @@ These callbacks work on items in each letter stack
 
 ### Per Letter Randoms
 
-These produce a random number between the min and max
+These produce a random number between the defined min and max, and apply that to a css property on each letter.
 
 | prop                 | description                                               | example                                          |
 | -------------------- | --------------------------------------------------------- | ------------------------------------------------ |
@@ -75,7 +89,11 @@ These produce a random number between the min and max
 
 ### Letter Callbacks
 
-These callbacks run on each letter
+These callbacks run on each letter.
+
+Each one can take a callback with two values, `letterIndex`, the index of the letter in the word, and `letter`, the string value of the letter.
+
+Alternatively, it can just take a value.
 
 | prop                 | description                                         | example                                              |
 | -------------------- | --------------------------------------------------- | ---------------------------------------------------- |
@@ -89,16 +107,12 @@ These callbacks run on each letter
 
 ### Wrapper props
 
-These props apply to the div wrapping everything
+These props apply to the div wrapping everything.
 
 | prop      | description                       | example        |
 | --------- | --------------------------------- | -------------- |
 | className | ClassName to apply to the wrapper | "my-cool-text" |
 | id        | id to apply to the wrapper        | "my-cool-text" |
-
-| _Per Letter Randoms_ | These produce a random number between the min and max | |
-
-_The callbacks in these props can all also just take a value instead_
 
 ## Examples
 
