@@ -89,15 +89,16 @@ export const CoolText: React.FunctionComponent<ICoolTextProps> = ({ children, cl
         console.error('CoolText component received children props which was not a string — children must be of type string.');
     }
 
-    const Text = React.useMemo<string[]>(() => children.split(''), [children]);
+    const text = React.useMemo<string[]>(() => children.split(''), [children]);
 
     return (
         <>
             <div className={ClassHelpers.classNames('cool-text', className)} id={id}>
-                {Text.map((letter, i) => (
+                {text.map((letter, i) => (
                     <CoolLetter letter={letter} index={i} key={i + letter} {...props} />
                 ))}
             </div>
+            <p className='cool-text-for-screen-readers'>{children}</p>
         </>
     );
 };

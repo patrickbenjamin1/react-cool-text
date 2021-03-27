@@ -132,7 +132,7 @@ export const CoolLetter: React.FunctionComponent<ICoolLetterProps> = ({
     const isReturn = letter === '\n';
 
     return (
-        <div className={ClassHelpers.classNames('cool-text-letter', className)} style={style} data-is-return={isReturn}>
+        <div className={ClassHelpers.classNames('cool-text-letter', className)} style={style} data-is-return={isReturn} tabIndex={-1} aria-hidden="true">
             {!isReturn &&
                 stack.map((stackLetter, i) => {
                     const props: ICoolLetterStackItemProps = {

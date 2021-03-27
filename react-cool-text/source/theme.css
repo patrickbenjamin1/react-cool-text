@@ -1,31 +1,36 @@
 .cool-text {
-  display: inline-flex;
-  flex-wrap: wrap;
-  justify-content: center;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .cool-text .cool-text-letter {
-  font-size: 3rem;
-  margin: 30px;
-  font-weight: 900;
-  position: relative;
+    font-size: 3rem;
+    margin: 30px;
+    font-weight: 900;
+    position: relative;
 }
 
 .cool-text .cool-text-letter[data-is-return='true'] {
-  flex-basis: 100%;
-  height: 0;
+    flex-basis: 100%;
+    height: 0;
 }
 
 .cool-text .cool-text-letter .cool-text-letter-stack-item {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  user-select: none;
+    user-select: none;
+}
+
+.cool-text-for-screen-readers {
+    position: absolute;
+    left: -99999px;
 }
