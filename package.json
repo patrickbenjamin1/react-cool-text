@@ -1,6 +1,6 @@
 {
     "name": "react-cool-text",
-    "version": "1.0.16",
+    "version": "1.0.17",
     "description": "React component for displaying text in a cool way.",
     "homepage": "https://github.com/patrickbenjamin1/react-cool-text",
     "author": "Patrick Benjamin",
@@ -19,7 +19,7 @@
         "url": "git+https://github.com/patrickbenjamin1/react-cool-text"
     },
     "dependencies": {
-        "react": "^16.12.0"
+        "react": "17.0.2"
     },
     "scripts": {
         "start-playground": "(cd playground && webpack-dev-server --config webpack.config.js --mode development)",
